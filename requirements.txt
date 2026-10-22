@@ -1,0 +1,9 @@
+# Pinned to the versions used to produce results/ (Python 3.11.9).
+# For a CPU-only install of torch use:
+#   pip install torch==2.11.0 --index-url https://download.pytorch.org/whl/cpu
+numpy==2.2.6
+scipy==1.17.1
+pandas==2.3.3
+matplotlib==3.11.1
+torch==2.11.0
+pytest==9.1.1

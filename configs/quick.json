@@ -1,0 +1,73 @@
+{
+  "seeds": [
+    0,
+    1
+  ],
+  "distances_km": [
+    25,
+    100
+  ],
+  "optimiser": {
+    "n_starts": 4,
+    "steps": 40,
+    "lr": 0.15
+  },
+  "random_search_budget_factor": 3,
+  "grid_points": [
+    10,
+    4,
+    4,
+    5,
+    5
+  ],
+  "calibration_error": 0.1,
+  "validation": {
+    "mc_attempts": 100000,
+    "n_overlap_checks": 8,
+    "n_mixed_fock": 3
+  },
+  "map": {
+    "n_wavelengths": 20,
+    "n_distances": 5,
+    "max_distance_km": 150,
+    "n_starts": 3,
+    "steps": 40
+  },
+  "robustness": {
+    "distance_km": 50,
+    "seeds": [
+      0
+    ],
+    "steps": 30,
+    "n_starts": 4,
+    "noise_scale": [
+      0.1,
+      10.0
+    ],
+    "dark_rate_hz": [
+      10,
+      1000
+    ],
+    "detuning_in_narrow_linewidths": [
+      0.0,
+      1.0
+    ],
+    "t2_scale": [
+      0.1,
+      1.0
+    ],
+    "raman_cutoff_cm1": [
+      750,
+      1050
+    ]
+  },
+  "bandwidth": {
+    "distance_km": 50,
+    "n_ratios": 3,
+    "max_ratio": 1000,
+    "n_efficiencies": 3,
+    "steps": 30,
+    "n_starts": 4,
+    "min_efficiency": 0.005
+  }
+}

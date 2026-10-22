@@ -1,0 +1,101 @@
+{
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "distances_km": [
+    10,
+    25,
+    50,
+    75,
+    100
+  ],
+  "optimiser": {
+    "n_starts": 16,
+    "steps": 300,
+    "lr": 0.08
+  },
+  "random_search_budget_factor": 3,
+  "grid_points": [
+    25,
+    10,
+    10,
+    12,
+    12
+  ],
+  "calibration_error": 0.1,
+  "validation": {
+    "mc_attempts": 2000000,
+    "n_overlap_checks": 200,
+    "n_mixed_fock": 20
+  },
+  "map": {
+    "n_wavelengths": 122,
+    "n_distances": 30,
+    "max_distance_km": 150,
+    "n_starts": 6,
+    "steps": 250
+  },
+  "robustness": {
+    "distance_km": 50,
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "steps": 150,
+    "n_starts": 8,
+    "noise_scale": [
+      0.01,
+      0.1,
+      1.0,
+      10.0,
+      100.0
+    ],
+    "dark_rate_hz": [
+      1,
+      10,
+      100,
+      1000
+    ],
+    "detuning_in_narrow_linewidths": [
+      0.0,
+      0.25,
+      0.5,
+      1.0,
+      2.0
+    ],
+    "t2_scale": [
+      0.01,
+      0.1,
+      1.0,
+      10.0
+    ],
+    "raman_cutoff_cm1": [
+      600,
+      750,
+      900,
+      1050,
+      1200
+    ]
+  },
+  "bandwidth": {
+    "distance_km": 50,
+    "n_ratios": 13,
+    "max_ratio": 1000,
+    "n_efficiencies": 14,
+    "steps": 200,
+    "n_starts": 8,
+    "min_efficiency": 0.005
+  }
+}

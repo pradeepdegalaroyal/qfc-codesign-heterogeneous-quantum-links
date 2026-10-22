@@ -1,0 +1,312 @@
+{
+  "10km": {
+    "H1_codesign_calibrated_vs_best_standard_calibrated": {
+      "n": 10,
+      "median_rel_gain": 0.12403898019098392,
+      "ci_low": 0.12113320380703452,
+      "ci_high": 0.12919200396403907,
+      "mean_rel_gain": 0.12480502394328412,
+      "wins": 10,
+      "losses": 0,
+      "wilcoxon_p": 0.001953125
+    },
+    "codesign_calibrated_vs_std_O_calibrated": {
+      "n": 10,
+      "median_rel_gain": 0.12403898019098392,
+      "ci_low": 0.12113320380703452,
+      "ci_high": 0.12919200396403907,
+      "mean_rel_gain": 0.12480502394328412,
+      "wins": 10,
+      "losses": 0,
+      "wilcoxon_p": 0.001953125
+    },
+    "codesign_nominal_vs_best_standard_calibrated": {
+      "n": 10,
+      "median_rel_gain": 0.0959417857760293,
+      "ci_low": 0.0768247698270399,
+      "ci_high": 0.11433298747257381,
+      "mean_rel_gain": 0.09381320980105472,
+      "wins": 10,
+      "losses": 0,
+      "wilcoxon_p": 0.001953125
+    },
+    "codesign_oracle_vs_best_standard_oracle": {
+      "n": 10,
+      "median_rel_gain": 0.12707802449664019,
+      "ci_low": 0.1224300969730594,
+      "ci_high": 0.12962321578336033,
+      "mean_rel_gain": 0.12641786730364965,
+      "wins": 10,
+      "losses": 0,
+      "wilcoxon_p": 0.001953125
+    },
+    "compression_vs_filtering_oracle": {
+      "n": 10,
+      "median_rel_gain": 11.737767919083172,
+      "ci_low": 7.549155739797625,
+      "ci_high": 14.943140597651805,
+      "mean_rel_gain": 11.501435645528272,
+      "wins": 10,
+      "losses": 0,
+      "wilcoxon_p": 0.001953125
+    },
+    "calibrated_vs_oracle_codesign": {
+      "n": 10,
+      "median_rel_gain": -0.004460092341913358,
+      "ci_low": -0.006434200218748409,
+      "ci_high": -0.001878924171517804,
+      "mean_rel_gain": -0.004464067286406526,
+      "wins": 0,
+      "losses": 10,
+      "wilcoxon_p": 0.001953125
+    }
+  },
+  "25km": {
+    "H1_codesign_calibrated_vs_best_standard_calibrated": {
+      "n": 10,
+      "median_rel_gain": 0.3565469059977784,
+      "ci_low": 0.3441946527790083,
+      "ci_high": 0.37060578715401427,
+      "mean_rel_gain": 0.3575416428730391,
+      "wins": 10,
+      "losses": 0,
+      "wilcoxon_p": 0.001953125
+    },
+    "codesign_calibrated_vs_std_O_calibrated": {
+      "n": 10,
+      "median_rel_gain": 0.3565469059977784,
+      "ci_low": 0.3441946527790083,
+      "ci_high": 0.37060578715401427,
+      "mean_rel_gain": 0.3575416428730391,
+      "wins": 10,
+      "losses": 0,
+      "wilcoxon_p": 0.001953125
+    },
+    "codesign_nominal_vs_best_standard_calibrated": {
+      "n": 10,
+      "median_rel_gain": 0.31594269471417213,
+      "ci_low": 0.2662933436571928,
+      "ci_high": 0.3517627919823496,
+      "mean_rel_gain": 0.3110580154860715,
+      "wins": 10,
+      "losses": 0,
+      "wilcoxon_p": 0.001953125
+    },
+    "codesign_oracle_vs_best_standard_oracle": {
+      "n": 10,
+      "median_rel_gain": 0.3655653985023537,
+      "ci_low": 0.3499156344320049,
+      "ci_high": 0.371491795814188,
+      "mean_rel_gain": 0.3617909723104173,
+      "wins": 10,
+      "losses": 0,
+      "wilcoxon_p": 0.001953125
+    },
+    "compression_vs_filtering_oracle": {
+      "n": 10,
+      "median_rel_gain": 12.29414609102848,
+      "ci_low": 7.83870958994234,
+      "ci_high": 15.342957690472616,
+      "mean_rel_gain": 11.899755264149727,
+      "wins": 10,
+      "losses": 0,
+      "wilcoxon_p": 0.001953125
+    },
+    "calibrated_vs_oracle_codesign": {
+      "n": 10,
+      "median_rel_gain": -0.00597625785669631,
+      "ci_low": -0.007852220465293047,
+      "ci_high": -0.0021971704131780734,
+      "mean_rel_gain": -0.006040820079300968,
+      "wins": 0,
+      "losses": 10,
+      "wilcoxon_p": 0.001953125
+    }
+  },
+  "50km": {
+    "H1_codesign_calibrated_vs_best_standard_calibrated": {
+      "n": 10,
+      "median_rel_gain": 0.889443196221255,
+      "ci_low": 0.848830217523532,
+      "ci_high": 0.9248748097986818,
+      "mean_rel_gain": 0.8868227919197222,
+      "wins": 10,
+      "losses": 0,
+      "wilcoxon_p": 0.001953125
+    },
+    "codesign_calibrated_vs_std_O_calibrated": {
+      "n": 10,
+      "median_rel_gain": 0.889443196221255,
+      "ci_low": 0.848830217523532,
+      "ci_high": 0.9248748097986818,
+      "mean_rel_gain": 0.8868227919197222,
+      "wins": 10,
+      "losses": 0,
+      "wilcoxon_p": 0.001953125
+    },
+    "codesign_nominal_vs_best_standard_calibrated": {
+      "n": 10,
+      "median_rel_gain": 0.8355110577289452,
+      "ci_low": 0.6837499980034263,
+      "ci_high": 0.8924921129601565,
+      "mean_rel_gain": 0.7952330628046654,
+      "wins": 10,
+      "losses": 0,
+      "wilcoxon_p": 0.001953125
+    },
+    "codesign_oracle_vs_best_standard_oracle": {
+      "n": 10,
+      "median_rel_gain": 0.912488024085866,
+      "ci_low": 0.8656730508847594,
+      "ci_high": 0.9287050259122269,
+      "mean_rel_gain": 0.897644945083402,
+      "wins": 10,
+      "losses": 0,
+      "wilcoxon_p": 0.001953125
+    },
+    "compression_vs_filtering_oracle": {
+      "n": 10,
+      "median_rel_gain": 13.909140419894278,
+      "ci_low": 8.70350475038014,
+      "ci_high": 16.95823080304957,
+      "mean_rel_gain": 13.214018932038352,
+      "wins": 10,
+      "losses": 0,
+      "wilcoxon_p": 0.001953125
+    },
+    "calibrated_vs_oracle_codesign": {
+      "n": 10,
+      "median_rel_gain": -0.005751971181478077,
+      "ci_low": -0.01189569861993145,
+      "ci_high": -0.0037243731129079083,
+      "mean_rel_gain": -0.008462972634011823,
+      "wins": 0,
+      "losses": 10,
+      "wilcoxon_p": 0.001953125
+    }
+  },
+  "75km": {
+    "H1_codesign_calibrated_vs_best_standard_calibrated": {
+      "n": 10,
+      "median_rel_gain": 1.702929481165374,
+      "ci_low": 1.596245556888463,
+      "ci_high": 1.7569955439031792,
+      "mean_rel_gain": 1.6913609789091892,
+      "wins": 10,
+      "losses": 0,
+      "wilcoxon_p": 0.001953125
+    },
+    "codesign_calibrated_vs_std_O_calibrated": {
+      "n": 10,
+      "median_rel_gain": 1.702929481165374,
+      "ci_low": 1.596245556888463,
+      "ci_high": 1.7569955439031792,
+      "mean_rel_gain": 1.6913609789091892,
+      "wins": 10,
+      "losses": 0,
+      "wilcoxon_p": 0.001953125
+    },
+    "codesign_nominal_vs_best_standard_calibrated": {
+      "n": 10,
+      "median_rel_gain": 1.608197323099931,
+      "ci_low": 1.3054200312759328,
+      "ci_high": 1.7103582405276545,
+      "mean_rel_gain": 1.4867634119086868,
+      "wins": 10,
+      "losses": 0,
+      "wilcoxon_p": 0.001953125
+    },
+    "codesign_oracle_vs_best_standard_oracle": {
+      "n": 10,
+      "median_rel_gain": 1.744217612416593,
+      "ci_low": 1.6299814290062666,
+      "ci_high": 1.785805746258041,
+      "mean_rel_gain": 1.718439692184774,
+      "wins": 10,
+      "losses": 0,
+      "wilcoxon_p": 0.001953125
+    },
+    "compression_vs_filtering_oracle": {
+      "n": 10,
+      "median_rel_gain": 15.737502210276341,
+      "ci_low": 9.630967397844051,
+      "ci_high": 19.233809928149576,
+      "mean_rel_gain": 14.942835079051303,
+      "wins": 10,
+      "losses": 0,
+      "wilcoxon_p": 0.001953125
+    },
+    "calibrated_vs_oracle_codesign": {
+      "n": 10,
+      "median_rel_gain": -0.006784969096800542,
+      "ci_low": -0.017901038726617524,
+      "ci_high": -0.004998926496755374,
+      "mean_rel_gain": -0.012605399010873708,
+      "wins": 0,
+      "losses": 10,
+      "wilcoxon_p": 0.001953125
+    }
+  },
+  "100km": {
+    "H1_codesign_calibrated_vs_best_standard_calibrated": {
+      "n": 10,
+      "median_rel_gain": 3.119208155246432,
+      "ci_low": 2.6680795030073026,
+      "ci_high": 3.2161792736410053,
+      "mean_rel_gain": 3.022499182206672,
+      "wins": 10,
+      "losses": 0,
+      "wilcoxon_p": 0.001953125
+    },
+    "codesign_calibrated_vs_std_O_calibrated": {
+      "n": 10,
+      "median_rel_gain": 3.119208155246432,
+      "ci_low": 2.6680795030073026,
+      "ci_high": 3.2161792736410053,
+      "mean_rel_gain": 3.022499182206672,
+      "wins": 10,
+      "losses": 0,
+      "wilcoxon_p": 0.001953125
+    },
+    "codesign_nominal_vs_best_standard_calibrated": {
+      "n": 10,
+      "median_rel_gain": 2.7054525535219076,
+      "ci_low": 1.308030658093176,
+      "ci_high": 3.177300256771689,
+      "mean_rel_gain": 2.1576642806110398,
+      "wins": 9,
+      "losses": 1,
+      "wilcoxon_p": 0.083984375
+    },
+    "codesign_oracle_vs_best_standard_oracle": {
+      "n": 10,
+      "median_rel_gain": 3.1261380862942683,
+      "ci_low": 2.8393059670213856,
+      "ci_high": 3.249543744211607,
+      "mean_rel_gain": 3.088301850783883,
+      "wins": 10,
+      "losses": 0,
+      "wilcoxon_p": 0.001953125
+    },
+    "compression_vs_filtering_oracle": {
+      "n": 10,
+      "median_rel_gain": 16.970581072173538,
+      "ci_low": 10.294754111929269,
+      "ci_high": 22.3408108027324,
+      "mean_rel_gain": 16.91753441604439,
+      "wins": 10,
+      "losses": 0,
+      "wilcoxon_p": 0.001953125
+    },
+    "calibrated_vs_oracle_codesign": {
+      "n": 10,
+      "median_rel_gain": -0.005963813566945808,
+      "ci_low": -0.024638543797402046,
+      "ci_high": -0.003460215058601057,
+      "mean_rel_gain": -0.019166608357657832,
+      "wins": 0,
+      "losses": 10,
+      "wilcoxon_p": 0.001953125
+    }
+  }
+}
