@@ -311,8 +311,6 @@ docs/                    RESEARCH_GAP.md, METHOD.md
 
 - [QEM-ZeroNoise-Extrapolation](https://github.com/pradeepdegalaroyal/QEM-ZeroNoise-Extrapolation):
   noise-aware modelling and mitigation on NISQ hardware.
-- [QFM-HeartBench](https://github.com/pradeepdegalaroyal/QFM-HeartBench): the same
-  statistics-first benchmarking practice (paired tests, corrected statistics, noise studies).
 
 ## Citation
 
