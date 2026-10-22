@@ -11,7 +11,7 @@ the others. We build a validated, differentiable model of a heralded two-node li
 quantum frequency conversion. We then co-optimise the telecom target wavelength, both pump
 powers and both filter bandwidths for a 930 nm broadband emitter linked to a 780 nm narrowband
 memory. In simulation over 10 randomised hardware instances with 10 % calibration error,
-co-design raises the hashing-bound distillable-entanglement rate by a median **3.1×** at
+co-design raises the hashing-bound distillable-entanglement rate by a median **4.1×** (+312 %) at
 100 km over the better of two literature-style operating points (Wilcoxon p = 0.002). The
 gain comes almost entirely from choosing a target near 1440–1470 nm instead of the O- or
 C-band.
