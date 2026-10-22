@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qfclink"
+version = "0.1.0"
+description = "Noise-aware co-design of quantum frequency conversion and bandwidth matching for heterogeneous heralded-entanglement links"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Degala Chenchupradeep" }]
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=2.0",
+    "scipy>=1.12",
+    "pandas>=2.0",
+    "matplotlib>=3.8",
+    "torch>=2.2",
+]
+keywords = ["quantum networks", "quantum frequency conversion", "entanglement distribution", "quantum memory", "PPLN"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Scientific/Engineering :: Physics",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

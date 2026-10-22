@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "qfclink: noise-aware co-design of quantum frequency conversion and bandwidth matching for heterogeneous heralded-entanglement links"
+type: software
+authors:
+  - family-names: "Chenchupradeep"
+    given-names: "Degala"
+    affiliation: "SRM University AP"
+version: "0.1.0"
+date-released: "2026-10-22"
+license: MIT
+repository-code: "https://github.com/pradeepdegalaroyal/qfc-codesign-heterogeneous-quantum-links"
+keywords:
+  - quantum networks
+  - quantum frequency conversion
+  - bandwidth conversion
+  - entanglement distribution
+  - quantum memory
+  - simulation
