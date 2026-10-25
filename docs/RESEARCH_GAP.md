@@ -12,14 +12,14 @@ fibre spools and a 35 km deployed loop by integrating *bidirectional quantum fre
 conversion (QFC) to 1350 nm*. That demonstration used two **identical** nodes.
 
 **Lithium niobate is the workhorse.** Periodically poled lithium niobate (PPLN) gives
-χ(2) conversion from the microwave to the UV, and a mature wafer industry supports it
+χ(2) conversion from the microwave to the ultraviolet (UV), and a mature wafer industry supports it
 (Boes et al., 2023, doi:10.1126/science.abj4396). Fabrication quality limits device losses
 (Ma et al., 2027, doi:10.1016/j.triboint.2026.112616). Integrated photonic chips are making
 these components compact and stable (Luo et al., 2023, doi:10.1038/s41377-023-01173-8).
 
-**Noise, not only loss, sets the distance limit.** Record QKD systems reach their distances
+**Noise, not only loss, sets the distance limit.** Record quantum key distribution (QKD) systems reach their distances
 mainly by suppressing noise counts. Twin-field QKD over 1002 km needed system noise of
-about 0.02 Hz from ultra-low-noise SNSPDs and dual-band phase estimation (Liu et al., 2023,
+about 0.02 Hz from ultra-low-noise superconducting nanowire single-photon detectors (SNSPDs) and dual-band phase estimation (Liu et al., 2023,
 doi:10.1103/PhysRevLett.130.210801). High-rate QKD relies on SNSPDs with very high counting
 rates (Li et al., 2023, doi:10.1038/s41566-023-01166-4). A strong pump inside a converter
 generates broadband Raman and parametric noise photons, so the same principle applies to QFC.
@@ -27,7 +27,7 @@ generates broadband Raman and parametric noise photons, so the same principle ap
 **Nodes are heterogeneous.** Candidate nodes include semiconductor spin qubits with spin-photon
 interfaces (Burkard et al., 2023, doi:10.1103/RevModPhys.95.025003), emitters in waveguide-QED
 structures (Sheremet et al., 2023, doi:10.1103/RevModPhys.95.015002), trapped ions (Moses et al.,
-2023, doi:10.1103/PhysRevX.13.041052) and new colour centres such as V_Si in SiC (Zhao et al.,
+2023, doi:10.1103/PhysRevX.13.041052) and new colour centres such as V_Si in silicon carbide (SiC) (Zhao et al.,
 2027, doi:10.1063/5.0326538). These platforms emit at different wavelengths, and their
 linewidths range from MHz to GHz. Network-native integration of heterogeneous resources is
 listed as an open challenge for multiparty protocols (Mouaji & Al-Kuwari, 2027,
@@ -57,7 +57,7 @@ Every choice trades **efficiency against noise against indistinguishability**:
   One λ_t can be quiet for one node and close to pump degeneracy for the other. For example,
   780 nm → 1560 nm needs a 1560 nm pump.
 - Pump power raises conversion efficiency as sin²(π/2·√(P/P_max)), but noise grows linearly in P.
-- A narrow filter raises the HOM visibility but cuts transmission. Its noise bandwidth and
+- A narrow filter raises the Hong-Ou-Mandel (HOM) visibility but cuts transmission. Its noise bandwidth and
   the length of the detection gate are coupled.
 
 Experiments usually choose a sensible operating point one component at a time: maximum
@@ -72,7 +72,7 @@ rule a technical review and roadmap of conversion technologies needs.
 
 ## 3. Research question and hypotheses
 
-**RQ.** For a heralded two-node link between a broadband solid-state emitter (930 nm,
+**research question (RQ).** For a heralded two-node link between a broadband solid-state emitter (930 nm,
 ~0.5 GHz) and a narrowband atom-like memory (780 nm, ~10 MHz), how much distillable
 entanglement does noise-aware *joint* co-design of (λ_t, P_A, P_B, Γ_fA, Γ_fB) gain over
 literature-style operating points? Does that gain survive realistic hardware uncertainty?
@@ -104,5 +104,5 @@ is checked against a first-principles Fock-space simulation of the Bell-state me
 event-level Monte Carlo and numerical quadrature. Hardware parameters are representative,
 order-of-magnitude **assumptions** rather than measurements of a particular device. For that
 reason they are randomised (10 seeds) and swept, including the main phenomenological parameter
-of the noise model, the Raman cutoff. Everything runs on a laptop CPU in under an hour.
+of the noise model, the Raman cutoff. Everything runs on a laptop central processing unit (CPU) in under an hour.
 Nothing here claims an experimental demonstration.

@@ -7,7 +7,7 @@
 **Abstract.** Linking two *different* quantum memories by photon interference requires
 converting both photons to one telecom wavelength and matching their bandwidths. Each choice
 trades conversion efficiency, pump-induced noise, fibre loss and indistinguishability against
-the others. We build a validated, differentiable model of a heralded two-node link with PPLN
+the others. We build a validated, differentiable model of a heralded two-node link with periodically poled lithium niobate (PPLN)
 quantum frequency conversion. We then co-optimise the telecom target wavelength, both pump
 powers and both filter bandwidths for a 930 nm broadband emitter linked to a 780 nm narrowband
 memory. In simulation over 10 randomised hardware instances with 10 % calibration error,
@@ -26,8 +26,8 @@ C-band.
 
 A practical quantum network has to connect *heterogeneous* nodes: quantum-dot or colour-centre
 emitters, atomic or ionic memories, and new solid-state defects. These nodes emit at
-different visible/NIR wavelengths and with linewidths from MHz to GHz. Two-node entanglement
-over deployed fibre has already been shown with bidirectional QFC of identical SiV nodes to
+different visible/near-infrared (NIR) wavelengths and with linewidths from MHz to GHz. Two-node entanglement
+over deployed fibre has already been shown with bidirectional quantum frequency conversion (QFC) of identical silicon-vacancy (SiV) nodes to
 1350 nm (Knaut et al., 2024). Moving from identical to heterogeneous nodes, and from tens of
 km to ~100 km, makes one engineering question central for any conversion roadmap:
 
@@ -37,8 +37,8 @@ use, and how much does a wrong choice cost?*
 ## Research gap (details: [docs/RESEARCH_GAP.md](docs/RESEARCH_GAP.md))
 
 - Quantum repeaters and networks must beat **loss and noise** in the channel
-  (Azuma et al., 2023, doi:10.1103/RevModPhys.95.045006). Record QKD reaches its distance
-  mainly by **noise suppression** (≈0.02 Hz system noise for 1002 km TF-QKD; Liu et al., 2023,
+  (Azuma et al., 2023, doi:10.1103/RevModPhys.95.045006). Record quantum key distribution (QKD) reaches its distance
+  mainly by **noise suppression** (≈0.02 Hz system noise for 1002 km twin-field quantum key distribution (TF-QKD); Liu et al., 2023,
   doi:10.1103/PhysRevLett.130.210801).
 - Lithium niobate gives χ(2) conversion across the spectrum (Boes et al., 2023,
   doi:10.1126/science.abj4396). QFC to telecom enabled memory–memory entanglement over a 35 km
@@ -46,7 +46,7 @@ use, and how much does a wrong choice cost?*
 - Heterogeneous platforms differ in wavelength and linewidth: spin qubits (Burkard et al., 2023,
   doi:10.1103/RevModPhys.95.025003), waveguide-QED emitters (Sheremet et al., 2023,
   doi:10.1103/RevModPhys.95.015002), trapped ions (Moses et al., 2023,
-  doi:10.1103/PhysRevX.13.041052) and SiC colour centres (Zhao et al., 2027, doi:10.1063/5.0326538).
+  doi:10.1103/PhysRevX.13.041052) and silicon carbide (SiC) colour centres (Zhao et al., 2027, doi:10.1063/5.0326538).
   Network-native integration of such resources remains open (Mouaji & Al-Kuwari, 2027,
   doi:10.1016/j.cosrev.2026.101047).
 - **Gap:** we found no end-to-end, noise-aware treatment that *jointly* chooses target
@@ -61,6 +61,7 @@ compression-vs-filtering crossover η*(r) lies within a factor 2 of 2/(1+r) for 
 ## Method (details: [docs/METHOD.md](docs/METHOD.md))
 
 ```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#ffffff', 'primaryTextColor': '#000000', 'primaryBorderColor': '#000000', 'lineColor': '#000000', 'secondaryColor': '#ffffff', 'tertiaryColor': '#ffffff', 'background': '#ffffff', 'noteBkgColor': '#ffffff', 'noteTextColor': '#000000', 'actorBkg': '#ffffff', 'actorBorder': '#000000', 'actorTextColor': '#000000', 'signalColor': '#000000', 'signalTextColor': '#000000', 'labelBoxBkgColor': '#ffffff', 'labelTextColor': '#000000', 'clusterBkg': '#ffffff', 'clusterBorder': '#000000'}}}%%
 flowchart LR
     A["Node A<br/>930 nm, Γ_A = 0.5 GHz<br/>spin–time-bin photon"] --> QA["PPLN QFC_A<br/>pump P_A, λ_p from λ_t<br/>η = η_ext sin²(π/2·√(P/P_max))<br/>Raman noise ∝ P"]
     QA --> CA["optional bandwidth<br/>compressor κ, η_BC"] --> FA["Lorentzian filter Γ_fA"] --> LA["fibre L/2 at λ_t"]
@@ -71,17 +72,19 @@ flowchart LR
     M -. "autograd ∂D_H/∂(λ_t, P_A, P_B, Γ_fA, Γ_fB, κ)" .-> QA
 ```
 
+*Diagram abbreviations: BS = beam splitter; SPDs = single-photon detectors.*
+
 - **Physics** (`src/qfclink/physics.py`, `link.py`):
-  - A closed-form HOM visibility of two Lorentzian-filtered, detuned photons, derived by
+  - A closed-form Hong-Ou-Mandel (HOM) visibility of two Lorentzian-filtered, detuned photons, derived by
     contour integration so that it has no removable singularities.
-  - DFG pump wavelength fixed by λ_t, with Raman-type pump noise per spectral-temporal mode.
+  - Difference-frequency generation (DFG) pump wavelength fixed by λ_t, with Raman-type pump noise per spectral-temporal mode.
     Noise is weighted by the Bose–Einstein occupation on the anti-Stokes or Stokes side and
     rolls off above a phonon cutoff.
   - Empirical fibre loss, a gated-detector noise model and memory dephasing during the
     herald wait.
   - Rate: hashing-bound distillable entanglement.
 - **Validation:**
-  - Fock-space simulation of the BSM with bosonic symmetrisation for pure and mixed spectral
+  - Fock-space simulation of the Bell-state measurement (BSM) with bosonic symmetrisation for pure and mixed spectral
     states (`fock.py`).
   - Numerical quadrature of the overlap integral.
   - Event-level Monte Carlo of the heralding logic (`montecarlo.py`).
@@ -94,12 +97,12 @@ flowchart LR
 - **Classical (design-procedure) baselines:** derivative-free random search with 3× the
   evaluation budget, and a 360,000-point dense grid, against multi-start Adam through the
   differentiable model.
-- **Realism.** Each of 10 seeds draws a "true" device: noise ×LN(σ = 0.5), Raman cutoff
-  ±30 cm⁻¹, efficiencies ±20 %, linewidths, T2, detuning. The operating point is designed on
+- **Realism.** Each of 10 seeds draws a "true" device: noise ×log-normal(σ = 0.5), Raman cutoff
+  ±30 cm⁻¹, efficiencies ±20 %, linewidths, dephasing time (T2), detuning. The operating point is designed on
   the **nominal model**, on a **calibrated** estimate (10 % error), or on the true device
   (**oracle**), and is always **evaluated on the true device**.
 - **Statistics:** paired two-sided Wilcoxon signed-rank test on per-seed log-ratios, with
-  percentile-bootstrap 95 % CI of the median gain.
+  percentile-bootstrap 95 % continuous integration (CI) of the median gain.
 
 ## Results
 
@@ -243,7 +246,7 @@ In all 50 cases neither baseline beat gradient co-design (best ratios 0.979 rand
 ## Limitations
 
 - Phenomenological Raman/noise model with a flat response up to a cutoff; no measured PPLN
-  spectrum, no SPDC from pump harmonics, no pump leakage.
+  spectrum, no spontaneous parametric down-conversion (SPDC) from pump harmonics, no pump leakage.
 - Lorentzian (exponential) photons and filters only. No time-resolved detection, multiplexing,
   multi-photon emission or phase drift. A time-bin two-click protocol only (no single-click
   scheme).
@@ -280,7 +283,7 @@ python experiments/run_all.py          # full run, regenerates results/ and figu
 ```
 
 - Full run: **1208 s (~20 min)** of summed stage time (`results/summary.json`; varies with machine load) on a Windows 11
-  laptop (multi-core CPU, run single-threaded; the GPU is not used), Python 3.11.9,
+  laptop (multi-core central processing unit (CPU), run single-threaded; the graphics processing unit (GPU) is not used), Python 3.11.9,
   torch 2.11.0, numpy 2.2.6.
 - Seeds: hardware seeds 0–9 (NumPy), calibration seeds 10000+seed, optimiser
   `torch.Generator(seed)`. Configs: `configs/default.json`, `configs/quick.json`.
@@ -310,7 +313,7 @@ docs/                    RESEARCH_GAP.md, METHOD.md
 ## Related work by the author
 
 - [QEM-ZeroNoise-Extrapolation](https://github.com/pradeepdegalaroyal/QEM-ZeroNoise-Extrapolation):
-  noise-aware modelling and mitigation on NISQ hardware.
+  noise-aware modelling and mitigation on noisy intermediate-scale quantum (NISQ) hardware.
 
 ## Citation
 
@@ -328,4 +331,4 @@ See also [CITATION.cff](CITATION.cff).
 
 ## License
 
-MIT, see [LICENSE](LICENSE).
+Massachusetts Institute of Technology (MIT), see [LICENSE](LICENSE).

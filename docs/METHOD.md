@@ -15,17 +15,17 @@ late bin, as in a Barrett–Kok-type scheme. All code lives in `src/qfclink/`.
 
 | Component | Model (file) |
 |---|---|
-| Photon modes | One-sided exponential (Lorentzian) photons with FWHM Γ; Lorentzian filters. Closed-form overlap `<B'|A'> = √(4ab) f_A f_B (a+b'+f_A+f_B') / [(a+b')(a+f_B')(b'+f_A)(f_A+f_B')]` with b' = b − iδ (detuning) from contour integration. V = \|<B'|A'>\|²/(T_A T_B), T_X = f_X/(x+f_X) (`physics.filtered_overlap`). |
-| QFC efficiency | η = η_ext · sin²(π/2 √(P/P_max)) (`physics.conversion_efficiency`). |
-| QFC noise | DFG pump λ_p = (1/λ_s − 1/λ_t)⁻¹. Noise photons per temporal-spectral mode = ν_R · g(\|Δ\|) · n(Δ) + ν_floor. Δ is the pump-to-target Raman shift, g is a flat Raman response rolling off above a cutoff Ω_c (nominal 900 cm⁻¹), and n = n_th on the anti-Stokes side or n_th + 1 on the Stokes side at 298 K. Noise ∝ P. Accepted modes = equivalent noise bandwidth × gate (`physics.raman_noise_per_mode`). **Phenomenological; Ω_c and ν_R are randomised and swept.** |
-| Fibre | Empirical G.652.D-like attenuation: Rayleigh (0.8 dB km⁻¹ µm⁴/λ⁴) + 0.01 dB/km + IR tail (≈0.28 dB/km at 1310 nm, 0.17 at 1550 nm). |
+| Photon modes | One-sided exponential (Lorentzian) photons with full width at half maximum (FWHM) Γ; Lorentzian filters. Closed-form overlap `<B'|A'> = √(4ab) f_A f_B (a+b'+f_A+f_B') / [(a+b')(a+f_B')(b'+f_A)(f_A+f_B')]` with b' = b − iδ (detuning) from contour integration. V = \|<B'|A'>\|²/(T_A T_B), T_X = f_X/(x+f_X) (`physics.filtered_overlap`). |
+| Quantum frequency conversion (QFC) efficiency | η = η_ext · sin²(π/2 √(P/P_max)) (`physics.conversion_efficiency`). |
+| QFC noise | difference-frequency generation (DFG) pump λ_p = (1/λ_s − 1/λ_t)⁻¹. Noise photons per temporal-spectral mode = ν_R · g(\|Δ\|) · n(Δ) + ν_floor. Δ is the pump-to-target Raman shift, g is a flat Raman response rolling off above a cutoff Ω_c (nominal 900 cm⁻¹), and n = n_th on the anti-Stokes side or n_th + 1 on the Stokes side at 298 K. Noise ∝ P. Accepted modes = equivalent noise bandwidth × gate (`physics.raman_noise_per_mode`). **Phenomenological; Ω_c and ν_R are randomised and swept.** |
+| Fibre | Empirical G.652.D-like attenuation: Rayleigh (0.8 dB km⁻¹ µm⁴/λ⁴) + 0.01 dB/km + infrared (IR) tail (≈0.28 dB/km at 1310 nm, 0.17 at 1550 nm). |
 | Detection | Efficiency 0.8, dark rate 10 Hz, gate = 3 photon durations, capture 1 − e⁻³. |
 | Heralding | P_pair = ½η_Aη_B; P_1noise = [η_A(1−η_B)+η_B(1−η_A)+½η_Aη_B]·p_n; P_2noise = (1−η_A)(1−η_B)p_n². Genuine pairs give Bell-diagonal (1±c)/2 with c = V · e^{−t_wait(1/T2_A+1/T2_B)}; noise heralds give 𝟙/4 (`physics.herald_probabilities`, `bell_diagonal`). |
 | Figure of merit | D_H = R_att · P_herald · max(0, 1 − S(ρ)) ebit/s, R_att = 1/(10 µs + L/c_fibre) (hashing bound). |
 | Active bandwidth compression | Photon A's linewidth is divided by κ ∈ [1, 100], with efficiency η_BC (nominal 0.4) and a mode-shape visibility ceiling of 0.95. Noise per mode is conserved and attenuated by η_BC. |
 
 **Nominal heterogeneous scenario** (`scenarios.heterogeneous_nominal`):
-- A: 930 nm, Γ = 0.5 GHz, collection 0.3, T2 = 10 ms, visibility ceiling 0.90.
+- A: 930 nm, Γ = 0.5 GHz, collection 0.3, dephasing time (T2) = 10 ms, visibility ceiling 0.90.
 - B: 780 nm, Γ = 10 MHz, collection 0.4, T2 = 100 ms, ceiling 0.98. The bandwidth ratio is r = 50.
 - QFC: η_ext = 0.5, ν_R = 5×10⁻⁵, ν_floor = 10⁻⁷ photons/mode at P_max, 20 GHz base filter.
 
@@ -88,7 +88,7 @@ The study uses 10 seeds (0–9) and distances of 10, 25, 50, 75 and 100 km.
 
 **Test.** For each distance, a paired two-sided Wilcoxon signed-rank test on the per-seed
 log-ratios of D_H (method vs baseline). We report the median relative gain with a 10,000-sample
-percentile-bootstrap 95 % CI, and wins/losses. Results are given as mean ± std over seeds.
+percentile-bootstrap 95 % continuous integration (CI), and wins/losses. Results are given as mean ± std over seeds.
 
 ## 5. Ablation, scaling and robustness
 
