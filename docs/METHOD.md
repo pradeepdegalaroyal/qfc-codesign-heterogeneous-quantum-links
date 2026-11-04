@@ -88,7 +88,7 @@ The study uses 10 seeds (0–9) and distances of 10, 25, 50, 75 and 100 km.
 
 **Test.** For each distance, a paired two-sided Wilcoxon signed-rank test on the per-seed
 log-ratios of D_H (method vs baseline). We report the median relative gain with a 10,000-sample
-percentile-bootstrap 95 % continuous integration (CI), and wins/losses. Results are given as mean ± std over seeds.
+percentile-bootstrap 95 % confidence interval (CI), and wins/losses. Results are given as mean ± std over seeds.
 
 ## 5. Ablation, scaling and robustness
 

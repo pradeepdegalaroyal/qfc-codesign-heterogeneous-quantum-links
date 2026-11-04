@@ -102,7 +102,7 @@ flowchart LR
   the **nominal model**, on a **calibrated** estimate (10 % error), or on the true device
   (**oracle**), and is always **evaluated on the true device**.
 - **Statistics:** paired two-sided Wilcoxon signed-rank test on per-seed log-ratios, with
-  percentile-bootstrap 95 % continuous integration (CI) of the median gain.
+  percentile-bootstrap 95 % confidence interval (CI) of the median gain.
 
 ## Results
 
